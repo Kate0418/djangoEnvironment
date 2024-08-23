@@ -5,6 +5,7 @@ endif
 ifndef APP_NAME
   $(error アプリ名を設定してください)
 endif
+.PHONY: $(APP_NAME)
 app:
 	@rm -rf .git
 	@docker build --build-arg APP_NAME=$(APP_NAME) -t django_environment .
